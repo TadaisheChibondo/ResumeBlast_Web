@@ -50,6 +50,7 @@
         -webkit-font-smoothing: antialiased;
       }
 
+      /* ── Noise texture overlay ── */
       body::before {
         content: "";
         position: fixed;
@@ -60,6 +61,7 @@
         opacity: 0.6;
       }
 
+      /* ── Utility ── */
       .container {
         width: 100%;
         max-width: 1060px;
@@ -92,9 +94,7 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
         border: 1px solid rgba(34, 197, 94, 0.3);
-        margin-bottom: 16px;
       }
-
       .pulse-dot {
         width: 6px;
         height: 6px;
@@ -102,7 +102,6 @@
         border-radius: 50%;
         animation: pulse 2s infinite;
       }
-
       @keyframes pulse {
         0% {
           box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
@@ -114,13 +113,11 @@
           box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
         }
       }
-
       .terms-disclaimer {
         font-size: 12px;
         color: var(--text-dim);
-        margin-top: 12px;
+        margin-top: 8px;
       }
-
       .terms-disclaimer a {
         color: var(--gold);
         text-decoration: none;
@@ -129,10 +126,16 @@
           color 0.2s,
           border-color 0.2s;
       }
-
       .terms-disclaimer a:hover {
         color: var(--cream);
         border-color: var(--cream);
+      }
+      .btn-group {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
       }
 
       /* ── NAV ── */
@@ -216,6 +219,8 @@
         position: relative;
         overflow: hidden;
       }
+
+      /* Radial glow behind hero text */
       .hero::after {
         content: "";
         position: absolute;
@@ -231,6 +236,8 @@
         );
         pointer-events: none;
       }
+
+      /* Decorative horizontal rule */
       .hero-rule {
         position: absolute;
         top: 50%;
@@ -246,6 +253,7 @@
         );
         opacity: 0.4;
       }
+
       .hero-inner {
         position: relative;
         z-index: 2;
@@ -254,6 +262,7 @@
         gap: 64px;
         align-items: center;
       }
+
       .hero-eyebrow {
         font-family: var(--mono);
         font-size: 11px;
@@ -272,6 +281,7 @@
         height: 1px;
         background: var(--gold);
       }
+
       .hero-headline {
         font-family: var(--serif);
         font-size: clamp(42px, 6vw, 68px);
@@ -285,25 +295,21 @@
         font-style: italic;
         color: var(--gold);
       }
+
       .hero-body {
         font-size: 15px;
         font-weight: 300;
         color: var(--text);
         line-height: 1.75;
         max-width: 440px;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
+
       .hero-actions {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-      }
-      .hero-buttons {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
       }
 
       .btn-primary {
@@ -355,6 +361,7 @@
         opacity: 0.5;
       }
 
+      /* Hero right — mock app window */
       .hero-visual {
         position: relative;
       }
@@ -479,6 +486,7 @@
         color: #b58900;
       }
 
+      /* Decorative gradient pill */
       .hero-pill {
         position: absolute;
         top: -16px;
@@ -505,7 +513,17 @@
         box-shadow: 0 0 8px var(--gold);
         animation: blink 2s ease-in-out infinite;
       }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.25;
+        }
+      }
 
+      /* ── DIVIDER ── */
       .divider {
         height: 1px;
         background: linear-gradient(
@@ -518,6 +536,7 @@
         margin: 0;
       }
 
+      /* ── STATS BAR ── */
       .stats-bar {
         padding: 48px 0;
       }
@@ -554,6 +573,7 @@
         text-transform: uppercase;
       }
 
+      /* ── HOW IT WORKS ── */
       .section {
         padding: 96px 0;
       }
@@ -648,6 +668,7 @@
         transform: scaleX(1);
       }
 
+      /* ── FEATURES ── */
       .features-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -713,6 +734,7 @@
         line-height: 1.75;
       }
 
+      /* ── CTA SECTION ── */
       .cta-section {
         padding: 96px 0 120px;
         text-align: center;
@@ -743,22 +765,15 @@
         max-width: 600px;
       }
       .cta-section .section-sub {
-        margin: 0 auto 32px;
+        margin: 0 auto 44px;
         text-align: center;
       }
-
       .cta-actions {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 12px;
-      }
-      .cta-buttons {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
       }
 
       .release-note {
@@ -778,6 +793,7 @@
         color: var(--gold);
       }
 
+      /* ── FOOTER ── */
       footer {
         border-top: 1px solid var(--border);
         padding: 32px 0;
@@ -818,6 +834,7 @@
         color: var(--text-dim);
       }
 
+      /* ── Responsive ── */
       @media (max-width: 840px) {
         .hero-inner {
           grid-template-columns: 1fr;
@@ -857,7 +874,7 @@
           <li><a href="#download">Download</a></li>
         </ul>
         <a
-          href="https://github.com/TadaisheChibondo/ResumeBlast/releases/latest"
+          href="https://github.com/TadaisheChibondo/ResumeBlast/releases/download/v1.0.0/Resume.Blast.Setup.1.0.0.exe"
           target="_blank"
           rel="noopener"
           class="nav-cta"
@@ -877,17 +894,17 @@
               Land Your Industrial<br /><em>Attachment Faster.</em>
             </h1>
             <p class="hero-body reveal" style="transition-delay: 0.2s">
-              Resume Blast is an intelligent desktop email engine built for CS
+              Resume Blast is an intelligent desktop email engine built for
               students seeking internships and industrial attachments. Drop your
-              CV, paste a list of companies — let it handle the rest.
+              CV, paste a list of company emails — let it handle the rest.
             </p>
-
             <div class="hero-actions reveal" style="transition-delay: 0.3s">
               <div class="coming-soon-badge">
                 <span class="pulse-dot"></span>
                 Android version coming soon
               </div>
-              <div class="hero-buttons">
+
+              <div class="btn-group">
                 <a
                   href="https://github.com/TadaisheChibondo/ResumeBlast/releases/latest"
                   target="_blank"
@@ -924,6 +941,7 @@
                   View Source
                 </a>
               </div>
+
               <p class="terms-disclaimer">
                 By downloading, you agree to our
                 <a href="terms.html">Terms & Conditions</a>.
@@ -979,10 +997,139 @@
                         >Delivered → careers@innov8.com</span
                       >
                     </div>
+                    <div class="log-entry">
+                      <span class="log-ts">14:32:11</span
+                      ><span class="log-warn">!</span
+                      ><span class="log-warn">Skipped: malformed address</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+    <div class="stats-bar">
+      <div class="container">
+        <div class="stats-inner reveal">
+          <div class="stat-item">
+            <div class="stat-number">3<span>–</span>5<span>s</span></div>
+            <div class="stat-label">Anti-spam delay between sends</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100<span>%</span></div>
+            <div class="stat-label">
+              Local — your credentials never leave your machine
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span>∞</span></div>
+            <div class="stat-label">
+              Recipients per campaign, no artificial limits
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+
+    <section class="section" id="how">
+      <div class="container">
+        <p class="section-eyebrow reveal">The process</p>
+        <h2 class="section-title reveal" style="transition-delay: 0.1s">
+          Three steps to your<br /><em>next opportunity.</em>
+        </h2>
+        <p class="section-sub reveal" style="transition-delay: 0.2s">
+          No cloud accounts, no subscriptions. Everything runs on your machine
+          using your own Gmail App Password — you stay in control.
+        </p>
+
+        <div class="steps">
+          <div class="step reveal" style="transition-delay: 0.1s">
+            <div class="step-num">01</div>
+            <div class="step-icon">📄</div>
+            <div class="step-title">Prepare Your Payload</div>
+            <p class="step-body">
+              Write your cover message once, attach your CV, and enter your
+              Gmail App Password. Resume Blast never stores your credentials —
+              they exist only for the duration of the send.
+            </p>
+            <div class="step-rule"></div>
+          </div>
+          <div class="step reveal" style="transition-delay: 0.2s">
+            <div class="step-num">02</div>
+            <div class="step-icon">🎯</div>
+            <div class="step-title">Paste Your Target List</div>
+            <p class="step-body">
+              Dump emails in any format — copied from spreadsheets, websites, or
+              LinkedIn. The engine automatically extracts and deduplicates valid
+              addresses, discarding junk in the process.
+            </p>
+            <div class="step-rule"></div>
+          </div>
+          <div class="step reveal" style="transition-delay: 0.3s">
+            <div class="step-num">03</div>
+            <div class="step-icon">🚀</div>
+            <div class="step-title">Launch the Campaign</div>
+            <p class="step-body">
+              Hit send. A randomised delay between deliveries mimics human
+              behaviour, keeping your Gmail account safe. A live terminal log
+              shows every success, skip, and failure in real time.
+            </p>
+            <div class="step-rule"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section" id="features">
+      <div class="container">
+        <p class="section-eyebrow reveal">Why Resume Blast</p>
+        <h2 class="section-title reveal" style="transition-delay: 0.1s">
+          Built for the <em>realities</em><br />of the job hunt.
+        </h2>
+
+        <div class="features-grid">
+          <div class="feature-card reveal" style="transition-delay: 0.1s">
+            <div class="feature-icon">🧠</div>
+            <div class="feature-title">Intelligent Email Extraction</div>
+            <p class="feature-body">
+              Paste a raw block of text scraped from anywhere — company
+              websites, spreadsheets, LinkedIn exports. The regex engine
+              surfaces every valid email and silently drops the rest.
+            </p>
+          </div>
+          <div class="feature-card reveal" style="transition-delay: 0.2s">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-title">Anti-Spam Architecture</div>
+            <p class="feature-body">
+              A randomised 2.5–5.5 second pause between each send mimics normal
+              human typing cadence. Gmail's abuse filters look for machine-speed
+              bursts — Resume Blast stays under the radar.
+            </p>
+          </div>
+          <div class="feature-card reveal" style="transition-delay: 0.1s">
+            <div class="feature-icon">🔒</div>
+            <div class="feature-title">Zero Cloud, Full Privacy</div>
+            <p class="feature-body">
+              Resume Blast runs entirely on your desktop. Your App Password,
+              your CV, your recipient list — none of it touches an external
+              server. Authentication happens directly over SMTP to Gmail.
+            </p>
+          </div>
+          <div class="feature-card reveal" style="transition-delay: 0.2s">
+            <div class="feature-icon">📊</div>
+            <div class="feature-title">Live Campaign Terminal</div>
+            <p class="feature-body">
+              A timestamped system log streams every delivery confirmation,
+              skipped address, and connection failure as it happens. You always
+              know exactly what was sent and what wasn't.
+            </p>
           </div>
         </div>
       </div>
@@ -1000,13 +1147,13 @@
           Download Resume Blast for free. Built by Tadaishe Chibondo, for
           students navigating industrial attachment season.
         </p>
-
         <div class="cta-actions reveal" style="transition-delay: 0.3s">
           <div class="coming-soon-badge">
             <span class="pulse-dot"></span>
             Android version coming soon
           </div>
-          <div class="cta-buttons">
+
+          <div class="btn-group" style="justify-content: center">
             <a
               href="https://github.com/TadaisheChibondo/ResumeBlast/releases/latest"
               target="_blank"
@@ -1024,13 +1171,31 @@
               </svg>
               Download Latest Release
             </a>
+            <a
+              href="https://github.com/TadaisheChibondo/ResumeBlast"
+              target="_blank"
+              rel="noopener"
+              class="btn-ghost"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+              >
+                <path
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+                />
+              </svg>
+              Star on GitHub
+            </a>
           </div>
+
           <p class="terms-disclaimer" style="text-align: center">
             By downloading, you agree to our
             <a href="terms.html">Terms & Conditions</a>.
           </p>
         </div>
-
         <p class="release-note reveal" style="transition-delay: 0.4s">
           Windows 10/11 · Python backend included ·
           <a
@@ -1047,7 +1212,9 @@
       <div class="container footer-inner">
         <div class="footer-logo">Resume<span>Blast</span></div>
         <ul class="footer-links">
-          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li>
+            <a href="terms.html">Terms & Conditions</a>
+          </li>
           <li>
             <a
               href="https://github.com/TadaisheChibondo/ResumeBlast"
@@ -1080,6 +1247,7 @@
     </footer>
 
     <script>
+      // Nav scroll effect
       const nav = document.getElementById("nav");
       window.addEventListener(
         "scroll",
@@ -1089,6 +1257,7 @@
         { passive: true },
       );
 
+      // Scroll reveal
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => {
